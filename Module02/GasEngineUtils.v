@@ -40,7 +40,7 @@ module MethanDetector(
 		
 	reg [3:0] present_state = S0, next_state=S0;
 	
-	always @ ( posedge clk or negedge arst )begin
+	always @ ( posedge clk or posedge arst )begin
 			if ( ~arst )
 				dout <= 1'b0;
 			else begin 
